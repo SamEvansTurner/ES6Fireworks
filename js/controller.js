@@ -9,8 +9,8 @@ class Controller {
         this.initialShells = 5;
 
         this.sparks = [];
-        this.shell_sparksMin = 50;
-        this.shell_sparksMax = 100;
+        this.shell_sparksMin = 200;
+        this.shell_sparksMax = 300;
 
         this.chanceForNewShell = 1 / 60;
         this.whiteChance = 1/15;
@@ -76,7 +76,7 @@ class Controller {
                     // get a copy of the parent shells position so everything is independent
                     const sparkX = shell.x;
                     const sparkY = shell.y;
-                    var grav = Math.random() * 100
+                    var grav = Math.random() * 30
                     var trailLen = Math.random() / 5
                     var timeToLive = Math.floor(Math.random() * 5)
                     var randRange = Math.floor(Math.random() * 101)
