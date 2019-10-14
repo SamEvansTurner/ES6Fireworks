@@ -9,7 +9,6 @@ class Controller {
         this.shell_sparksMin = 200;
         this.shell_sparksMax = 300;
 
-        this.chanceForNewShell = 1 / 60;
         this.whiteChance = 1/15;
 
         this.minColours = 6;
@@ -32,8 +31,10 @@ class Controller {
 
     update(delta) {
 
+        delta = delta / 16;
+
         if (this.shells.length < this.maxShells &&
-            Math.random() < this.chanceForNewShell) {
+            (Math.random()) < (delta)) {
                 var numShells = 1 + Math.floor(Math.random() * 5);
                 var yVelScale = this.height / 1.3;
                 var yVel = -yVelScale + Math.random() * (yVelScale / 4)
