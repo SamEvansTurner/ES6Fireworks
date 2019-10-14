@@ -8,7 +8,7 @@ class Shell extends Particle {
         y = screenHeight
 
         var xVelScale = screenWidth;
-        var gravity = 350;
+        var gravity = screenHeight / 3;
         var xVel = 0
         if (x < (screenWidth * 0.33)) {
             xVel =  Math.random() * (xVelScale / 8)
@@ -25,7 +25,7 @@ class Shell extends Particle {
     }
 
     remove() {
-        return this.yVel > -50 || this.y < -30
+        return this.yVel > -(this.maxY / 20) || this.y < -30
     }
 
     update(delta) {

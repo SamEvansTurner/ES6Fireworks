@@ -2,7 +2,7 @@ class Controller {
 
     constructor(canvas, ctx) {
         this.shells = [];
-        this.maxShells = 10;
+        this.maxShells = 8;
         this.initialShells = 5;
 
         this.sparks = [];
@@ -72,9 +72,9 @@ class Controller {
                     // get a copy of the parent shells position so everything is independent
                     const sparkX = shell.x;
                     const sparkY = shell.y;
-                    var grav = Math.random() * 30
+                    var grav = Math.random() * (this.height / 30)
                     var trailLen = Math.random() / 5
-                    var timeToLive = Math.floor(Math.random() * 5)
+                    var timeToLive = Math.floor(Math.random() * 3)
                     var randRange = Math.floor(Math.random() * 101)
                     var velFactor = (randRange/2) + (Math.random() * randRange/2)
                     this.sparks.push(new Spark(sparkX, sparkY, colour, this.width, this.height, grav, trailLen, velFactor, timeToLive));
