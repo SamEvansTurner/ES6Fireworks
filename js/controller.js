@@ -1,8 +1,5 @@
 class Controller {
 
-    canvas = null;
-    ctx = null;
-
     constructor(canvas, ctx) {
         this.shells = [];
         this.maxShells = 10;
@@ -46,10 +43,9 @@ class Controller {
                 }
         }
 
-        var newShells = [];
 
         for (var i = this.shells.length - 1; i >= 0; i--) {
-            const shell = this.shells[i];
+            var shell = this.shells[i];
 
             if (shell.remove()) {
                 const numSparks = this.shell_sparksMin + Math.floor(Math.random() * (this.shell_sparksMax - this.shell_sparksMin));
@@ -70,8 +66,8 @@ class Controller {
 
                     colours.push("" + hue + ", 100%, " + lightness + "%");
                 }
-
-                for (let i = 0; i < numSparks; i++) {
+             
+                for (var s = 0; s < numSparks; s++) {
                     const colour = colours[Math.floor(Math.random() * numColours)];
                     // get a copy of the parent shells position so everything is independent
                     const sparkX = shell.x;
