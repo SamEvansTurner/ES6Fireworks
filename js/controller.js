@@ -31,8 +31,6 @@ class Controller {
 
     update(delta) {
 
-        delta = delta / 16;
-
         if (this.shells.length < this.maxShells &&
             (Math.random()) < (delta)) {
                 var numShells = 1 + Math.floor(Math.random() * 5);
